@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const PacktrackerPlugin = require('@packtracker/webpack-plugin');
 const webpack = require('webpack');
 module.exports = {
     devtool: 'source-map',
@@ -52,6 +53,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve('./index.html')
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new PacktrackerPlugin({
+            project_token: 'bb02d551-ee7a-4d64-ac8f-7e5724e81b2a',
+            upload: true,
+            fail_build: true
+        })
     ]
 };
