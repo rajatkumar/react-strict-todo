@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style/main.less';
-class Welcome extends React.Component {
+import Layout from './component/Layout.jsx';
+class Main extends React.Component {
     render() {
         return (
-            <div>
+            <Layout>
                 <div className="header">
                     <h1>Yet Another BoilerPlate</h1>
                 </div>
-            </div>
+            </Layout>
         );
     }
 }
 
-ReactDOM.render(<Welcome />, document.getElementById('app'));
+ReactDOM.render(<Main />, document.getElementById('app'));
